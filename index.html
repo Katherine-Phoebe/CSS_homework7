@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询</title>
+    <!-- 屏幕宽度大于1200px，四个div块并列显示，宽度相同 -->
+    <!-- 992px~1200px之间时，第一个独占一行，剩余三个并列显示且宽度相同 -->
+    <!-- 768px~992px，两个div并列显示，宽度相同 -->
+    <!-- 小于768px时，每个div均独占一行 -->
+    <style>
+        .one{
+            background-color: red;
+        }
+        .two{
+            background-color: blue;
+        }
+        .three{
+            background-color: black;
+        }
+        .four{
+            background-color: orange;
+        }
+        @media screen and (min-width:1200px){
+            .bg{
+                width: 1200px;
+                margin: 0 auto;
+            }
+            .bg>div{
+                float: left;
+                width:300px;
+                height:60px;
+                line-height: 60px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+        @media screen and (min-width:992px) and (max-width:1200px){
+            .bg{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .bg>div{
+                height:60px;
+                line-height: 60px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+            }
+            .one{
+                width: 900px;
+            }
+            .two{
+                width:300px;
+                
+            }
+            .three{
+                width:300px;
+                
+            } 
+            .four{
+                width:300px;
+                
+            } 
+        }
+        @media screen and (min-width:768px) and (max-width:992px){
+            .bg{
+                width: 800px;
+                height: 120px;
+                margin: 0 auto;
+            }
+            .bg>div{
+                width: 400px;
+                height:60px;
+                line-height: 60px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                float: left;
+            }
+        }
+        @media screen and (max-width:768px){
+            .bg{ 
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .bg>div{
+                width: 600px;
+                height:60px;
+                line-height: 60px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+    </div>
+</body>
+</html>
